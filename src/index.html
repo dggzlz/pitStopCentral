@@ -49,7 +49,17 @@
             
                 <!-- ABOUT THE WEBSITE -->
                 <div class="bg-red-600 p-4 rounded-md">
-                    <h2 class="text-xl font-semibold">About the Website</h2>
+                    <h2 class="text-xl font-semibold italic">About the Website</h2>
+                    <h2 class="mt-2">
+                        This project was developed by 
+                        <strong class="italic"><a href="https://www.linkedin.com/in/diego-gonzalez-5864b0224" target="_blank" rel="noopener noreferrer" class=" hover:text-gray-300 hover:underline">
+                            Diego Gonzalez Reyes</a></strong>.
+                    </h2>
+                    <h2>
+                        <strong class="italic"><a href="https://github.com/diegogonzalezreyes/Pit-Stop-Central" class=" hover:text-gray-300 hover:underline">
+                            Github repo.
+                        </a></strong>
+                    </h2>
                     <p class="mt-2">Pit Stop Central is a sleek and interactive 
                         web application designed for Formula 1 enthusiasts. 
                         This platform enables users to explore detailed information 
@@ -66,24 +76,16 @@
                         Browser Storage:
                         <li>LocalStorage for persisting user favorites and caching data</li>
                     </ul>
-                    <p class="mt-2">
-                        This project was developed by 
-                        <a href="https://www.linkedin.com/in/diego-gonzalez-5864b0224" target="_blank" rel="noopener noreferrer" class=" hover:text-gray-300 hover:underline">
-                            Diego Gonzalez Reyes</a>.
-                    </p>
-                    <a href="https://github.com/diegogonzalezreyes/Pit-Stop-Central" class=" hover:text-gray-300 hover:underline">
-                        Github repo</a>.
                 </div>
 
 
                 <!-- SEASON SECTION -->
                 <div class="bg-red-600 p-4 rounded-md flex justify-center">
                     <div class="w-full max-w-lg">
-                        <h2 class="text-lg font-semibold mb-4 text-center">Season Information</h2>
+                        <h2 class="text-lg font-semibold mb-4 text-center italic">Season Information</h2>
                         
                             <!-- Form Fields -->
                             <div class="mb-4">
-                                <label for="season-name" class="mb-4 block text-sm font-medium text-white">Season Name</label>
                                 <select id="season" class=" block w-full px-3 py-2 bg-gray-800 border hover:bg-gray-700 border-gray-700 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300">
                                     <option>Select Season</option>
                                     <option>2020</option>
@@ -153,8 +155,8 @@
                         <h2 class="text-xl font-semibold text-center mb-2">Qualifying</h2>
                         <div id="qualifying-table" class="overflow-x-auto max-h-[calc(100vh-100px)] pb-4">
                             <table class="min-w-full bg-gray-800 text-white text-sm overflow-x-auto overflow-y-auto">
-                                <thead class="top-0 bg-gray-700">
-                                    <tr >
+                                <thead>
+                                    <tr class="bg-gray-700">
                                         <th class="py-1 px-2 text-left cursor-pointer" data-column="position" data-order="asc">
                                             Pos
                                         </th>
@@ -187,7 +189,7 @@
                         <h2 class="text-xl italic font-semibold text-center mb-2  rounded-md"><strong>Podium</strong></h2>
 
                         <!-- PODIUM IMAGES -->
-                        <div id="podium" class="flex justify-center items-center space-x-8 mb-16  rounded-md">
+                        <div id="podium" class="flex justify-center items-center space-x-8 mb-24 rounded-md">
                             <div class="flex flex-col items-center">
                                 <img src="../img/1st-place.jpg" alt="First Place" class="h-20 w-20 object-contain hover:scale-110 transition-transform rounded-full ">
                                 <p id="first-place" class="text-sm text-center"> <!-- TO BE POPULATED DYNAMICALLY --> </p>
@@ -202,12 +204,12 @@
                             </div>
                         </div>
                         <!-- RESULTS TABLE -->
-                        <h2 class="text-xl font-semibold text-center mb-4">Results</h2>
-                        <div id="results-table" class="overflow-x-auto  max-h-[calc(100vh-100px)] pb-4 pt-4">
+                        <h2 class="text-xl font-semibold text-center ">Results</h2>
+                        <div id="results-table" class="overflow-x-auto  max-h-[calc(100vh-100px)] pb-4 pt-4 mt-4">
                             <table class="min-w-full bg-gray-800 text-white text-sm overflow-x-auto overflow-y-auto">
                                 <thead>
                                     <tr class="bg-gray-700">
-                                        <th class="py-1 px-2 text-left cursor-pointer  " data-column="position" data-order="asc">
+                                        <th class="py-1 px-2 text-left cursor-pointer" data-column="position" data-order="asc">
                                             Pos
                                         </th>
                                         <th class="py-1 px-2 text-left cursor-pointer" data-column="driver" data-order="asc">

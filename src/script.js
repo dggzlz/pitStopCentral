@@ -555,18 +555,18 @@ function handleResultsButton(element, row)
         //display the race details
         document.getElementById('race-details').innerHTML = 
             `
-                <p class="text-white m-2">Race Name: ${element.name}</p>
-                <p class="text-white m-2">Round: ${element.round}</p>
-                <p class="text-white m-2">Year: ${element.year}</p>
-                <p class="text-white m-2">Circuit: 
-                    <span class="cursor-pointer hover:text-blue-400">    
+                <h1 class="text-xl text-white m-2 font-semibold"><i class="mr-2">Race Name:</i> <span class="font-normal text-md">${element.name}</span></h1>
+                <h1 class="text-xl text-white m-2 font-semibold"><i class="mr-2">Round:</i> <span class="font-normal text-md">${element.round}</span></h1>
+                <h1 class="text-xl text-white m-2 font-semibold"><i class="mr-2">Year:</i> <span class="font-normal text-md">${element.year}</span></h1>
+                <h1 class="text-xl text-white m-2 font-semibold"><i class="mr-2">Circuit:</i> 
+                    <span class="cursor-pointer hover:text-blue-400 font-normal">    
                         <span onclick="showCircuitPopup(${JSON.stringify(element.circuit).replace(/"/g, '&quot;')})">
                             ${element.circuit.name} 
                         </span>
                     </span>
-                </p>
-                <p class="text-white m-2">Date: ${element.date}</p>
-                <p class="text-white m-2">URL: <a class="text-blue-600 hover:text-blue-700" href="${element.url}">Wikipedia</a></p>
+                </h1>
+                <h1 class="text-xl text-white m-2 font-semibold"><i class="mr-2">Date:</i> <span class="font-normal text-md">${element.date}</span></h1>
+                <h1 class="text-xl text-white m-2 font-semibold"><i class="mr-2"><a class="text-blue-600 hover:text-blue-700" href="${element.url}">Wikipedia</a></i></h1>
             `; 
 
         // Pass the race name to filter results
