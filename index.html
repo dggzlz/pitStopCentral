@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pit Stop Central</title> 
-    <link rel="icon" type="image/png" href="../img/logo-removebg-preview.png">
+    <link rel="icon" type="image/png" href="img/logo-removebg-preview.png">
     <link rel="stylesheet" href="output.css">
 </head>
 <body class="text-white bg-gray-800 min-w-100">
@@ -12,23 +12,22 @@
     <nav class="px-6 py-3 flex items-center justify-between">
         <!-- logo -->
         <div class="flex items-center space-x-2">
-            <img src="./../img/logo-removebg-preview.png" alt="logo" class="h-10 md:h-10">
+            <img src="img/logo-removebg-preview.png" alt="logo" class="h-10 md:h-10">
         </div>
  
         <!-- title -->
         <div class="flex-grow text-left">
-            <h1 class="text-x1 italic font-semibold text-white ">Pit Stop Central</h1>
+            <h1 class="text-xl md:text-2xl italic font-semibold text-white ">Pit Stop Central</h1>
         </div>
 
         <!-- MENU BUTTON -->
         <div class="flex items-center space-x-4">
-
-        <!-- Toggled Menu -->
-        <div id="menu-items" class="hidden flex space-x-4">
-            <a id="home-button" class="text-white hover:text-gray-300 px-4 py-2 hover:bg-gray-700 rounded-md">Home</a>
-            <a id="favorites-button" href="#favorites" class="text-white hover:text-gray-300 px-4 py-2 hover:bg-gray-700 rounded-md">Favorites</a>
-        </div>
-            <img id="menu-icon" src="../img/drop-down-menu.png" alt="logo" class="hover:bg-gray-600 h-12 md:h-12 rounded-md">
+            <!-- Toggled Menu -->
+            <div id="menu-items" class="hidden flex md:flex space-x-4">
+                <a id="home-button" class="text-white hover:text-gray-300 px-4 py-2 hover:bg-gray-700 rounded-md">Home</a>
+                <a id="favorites-button" href="#favorites" class="text-white hover:text-gray-300 px-4 py-2 hover:bg-gray-700 rounded-md">Favorites</a>
+            </div>
+                <img id="menu-icon" src="img/drop-down-menu.png" alt="logo" class="hover:bg-gray-600 h-12 md:h-12 rounded-md">
         </div>
     </nav>
 
@@ -103,7 +102,7 @@
             <!-- PHOTO -->
             <div class="mt-4 bg-white rounded-md">
                 <!-- image source: https://www.formula1.com/en/latest/article/2021-car-revealed-as-fia-and-f1-present-regulations-for-the-future.3ZkeTsu1sNCrFGP1HI9KVy -->
-                <img src="../img/main_photo.png" alt="formula1-car" class="w-full h-auto rounded-md">
+                <img src="img/main_photo.png" alt="formula1-car" class="w-full h-auto rounded-md">
             </div>
         </section> 
 
@@ -191,15 +190,15 @@
                         <!-- PODIUM IMAGES -->
                         <div id="podium" class="flex justify-center items-center space-x-8 mb-24 rounded-md">
                             <div class="flex flex-col items-center">
-                                <img src="../img/1st-place.jpg" alt="First Place" class="h-20 w-20 object-contain hover:scale-110 transition-transform rounded-full ">
+                                <img src="img/1st-place.jpg" alt="First Place" class="h-20 w-20 object-contain hover:scale-110 transition-transform rounded-full ">
                                 <p id="first-place" class="text-sm text-center"> <!-- TO BE POPULATED DYNAMICALLY --> </p>
                             </div>
                             <div class="flex flex-col items-center">
-                                <img src="../img/2nd-place.jpg" alt="Second Place" class="h-20 w-20 object-contain hover:scale-110 transition-transform rounded-full">
+                                <img src="img/2nd-place.jpg" alt="Second Place" class="h-20 w-20 object-contain hover:scale-110 transition-transform rounded-full">
                                 <p id="second-place" class="text-sm text-center"> <!-- TO BE POPULATED DYNAMICALLY --> </p>
                             </div>
                             <div class="flex flex-col items-center">
-                                <img src="../img/3rd-place.jpg" alt="Third Place" class="h-20 w-20 object-contain hover:scale-110 transition-transform rounded-full">
+                                <img src="img/3rd-place.jpg" alt="Third Place" class="h-20 w-20 object-contain hover:scale-110 transition-transform rounded-full">
                                 <p id="third-place" class="text-sm text-center"> <!-- TO BE POPULATED DYNAMICALLY --> </p>
                             </div>
                         </div>
@@ -276,6 +275,6 @@
       <p class="text-sm">© 2024 Pit Stop Central</p>
   </footer>
   <!-- SCRIPT FOR THE WEBSITE -->
-  <script src="/src/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

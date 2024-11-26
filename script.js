@@ -230,11 +230,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Return to home view
     document.getElementById('home-button').addEventListener('click', () => {
         const resultsView = document.getElementById('results-view');
+        const popup = document.getElementById('popup-template');
+
         // Hide both race and results views
         raceView.classList.add('hidden');
         raceView.style.display = "none";
         resultsView.classList.add('hidden');
         resultsView.style.display = "none";
+        // Re-enable background interaction
+        document.getElementById('main-section').classList.remove('disable-interaction');
+        popup.classList.add('hidden');
 
         hideResultsView();
     });
