@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pit Stop Central</title> 
+    <link rel="icon" type="image/png" href="../img/logo-removebg-preview.png">
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="text-white bg-gray-800 min-w-100">
+    <!-- NAVIGATION BAR  -->
+    <nav class="px-6 py-3 flex items-center justify-between">
+        <!-- logo -->
+        <div class="flex items-center space-x-2">
+            <img src="./../img/logo-removebg-preview.png" alt="logo" class="h-10 md:h-10">
+        </div>
+ 
+        <!-- title -->
+        <div class="flex-grow text-left">
+            <h1 class="text-x1 italic font-semibold text-white ">Pit Stop Central</h1>
+        </div>
+
+        <!-- MENU BUTTON -->
+        <div class="flex items-center space-x-4">
+
+        <!-- Toggled Menu -->
+        <div id="menu-items" class="hidden flex space-x-4">
+            <a id="home-button" class="text-white hover:text-gray-300 px-4 py-2 hover:bg-gray-700 rounded-md">Home</a>
+            <a id="favorites-button" href="#favorites" class="text-white hover:text-gray-300 px-4 py-2 hover:bg-gray-700 rounded-md">Favorites</a>
+        </div>
+            <img id="menu-icon" src="../img/drop-down-menu.png" alt="logo" class="hover:bg-gray-600 h-12 md:h-12 rounded-md">
+        </div>
+    </nav>
+
+    <!-- MAIN SECTION OF WEBSITE -->
+    <main id="main-section" class="p-6 space-y-4">
+
+        <!-- LOADER ANIMATION -->
+        <div id="loader" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-white">
+                <!-- TO BE POPULATED DYNAMICALLY -->
+            </div>
+        </div>
+        
+        <!-- HOME VIEW -->
+        <!-- ALIGN CONTENT -->
+        <section id="home-view" class="container mx-auto px-4 transition-all duration-300 ease-in-out">
+            <div class="grid grid-cols-2 gap-4">
+            
+                <!-- ABOUT THE WEBSITE -->
+                <div class="bg-red-600 p-4 rounded-md">
+                    <h2 class="text-xl font-semibold">About the Website</h2>
+                    <p class="mt-2">Pit Stop Central is a sleek and interactive 
+                        web application designed for Formula 1 enthusiasts. 
+                        This platform enables users to explore detailed information 
+                        about F1 seasons, including races, drivers, constructors, 
+                        and circuits. It also allows users to manage their favorite 
+                        items and interact with dynamically generated data in an engaging manner.
+                    </p>
+                    <ul class="mt-2 list-disc list-inside">
+                        Technologies used:
+                        <li>HTML5 and CSS3 (Tailwind CSS for modern styling and responsive design)</li>
+                        <li>Vanilla JavaScript for dynamic functionalities and user interactions</li>
+                        Backend API:
+                        <li>Data sourced from external APIs providing real-time F1 statistics</li>
+                        Browser Storage:
+                        <li>LocalStorage for persisting user favorites and caching data</li>
+                    </ul>
+                    <p class="mt-2">
+                        This project was developed by 
+                        <a href="https://www.linkedin.com/in/diego-gonzalez-5864b0224" target="_blank" rel="noopener noreferrer" class=" hover:text-gray-300 hover:underline">
+                            Diego Gonzalez Reyes</a>.
+                    </p>
+                    <a href="https://github.com/diegogonzalezreyes/Pit-Stop-Central" class=" hover:text-gray-300 hover:underline">
+                        Github repo</a>.
+                </div>
+
+
+                <!-- SEASON SECTION -->
+                <div class="bg-red-600 p-4 rounded-md flex justify-center">
+                    <div class="w-full max-w-lg">
+                        <h2 class="text-lg font-semibold mb-4 text-center">Season Information</h2>
+                        
+                            <!-- Form Fields -->
+                            <div class="mb-4">
+                                <label for="season-name" class="mb-4 block text-sm font-medium text-white">Season Name</label>
+                                <select id="season" class=" block w-full px-3 py-2 bg-gray-800 border hover:bg-gray-700 border-gray-700 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300">
+                                    <option>Select Season</option>
+                                    <option>2020</option>
+                                    <option>2021</option>
+                                    <option>2022</option>
+                                    <option>2023</option>
+                                </select>
+                            </div>
+                            <button id="submit-season" type="submit" class="w-full py-2 px-4 bg-white hover:bg-gray-200 text-black font-semibold rounded-md">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- PHOTO -->
+            <div class="mt-4 bg-white rounded-md">
+                <!-- image source: https://www.formula1.com/en/latest/article/2021-car-revealed-as-fia-and-f1-present-regulations-for-the-future.3ZkeTsu1sNCrFGP1HI9KVy -->
+                <img src="../img/main_photo.png" alt="formula1-car" class="w-full h-auto rounded-md">
+            </div>
+        </section> 
+
+        <!-- RACES VIEW -->
+        <section id="race-view" class="text-white hidden fixed top-[84px] left-0 bg-gray-900 bg-opacity-100 flex flex-col items-center justify-center z-50 w-[25%] h-[calc(100vh-72px)] rounded-md pb-4">
+           <div class="overflow-y-auto h-full w-full px-4">
+                <h2 class="text-xl font-semibold text-center mb-4 pt-1">
+                    <span id="season-year"> <!-- TO BE POPULATED DYNAMICALLY --> </span>
+                </h2>
+                <div class="overflow-x-auto w-full max-w-xs pb-4">
+                    <table class="min-w-full bg-gray-800 text-white">
+                        <thead class="top-0 bg-gray-700">
+                            <tr>
+                                <th class="py-1 px-4 mr-2 text-left cursor-pointer" data-column="round" data-order="asc">
+                                    Round
+                                </th>
+                                <th class="py-2 px-4 text-left cursor-pointer" data-column="name" data-order="asc">
+                                    Name
+                                </th>
+                                <th class="py-2 px-4 text-left">
+                                    Results
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="race-content"> <!-- TO BE POPULATED DYNAMICALLY --> </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTS VIEW -->
+        <section id="results-view" class="text-white hidden overflow-y-auto fixed top-[84px] right-0 bg-gray-900 bg-opacity-100 flex flex-col z-50 w-[73%] max-h-[calc(100vh-72px)] rounded-md p-4 space-y-4 pb-16 mb-16">
+            <div class="overflow-y-auto h-full w-full px-4">
+                <h2 class="text-2xl font-bold text-center mb-4 text-white">
+                    <span id="season-year"> <!-- TO BE POPULATED DYNAMICALLY --> </span> 
+                    Results for 
+                    <span id="race-name"> <!-- TO BE POPULATED DYNAMICALLY --> </span>
+                </h2>
+                
+                <div class="flex flex-row space-x-4 w-full">
+                    <!-- LEFT SIDE: More Info + Qualifying -->
+                    <div class="w-1/2 space-y-4 flex flex-col max-h-[calc(100vh-100px)]">
+                        <!-- More Info Table -->
+                        <div id="race-details" class="bg-gray-800 rounded-md">
+                            <!-- TO BE POPULATED DYNAMICALLY -->
+                        </div>
+                        
+                        <!-- QUALIFIERS TABLE -->
+                        <h2 class="text-xl font-semibold text-center mb-2">Qualifying</h2>
+                        <div id="qualifying-table" class="overflow-x-auto max-h-[calc(100vh-100px)] pb-4">
+                            <table class="min-w-full bg-gray-800 text-white text-sm overflow-x-auto overflow-y-auto">
+                                <thead class="top-0 bg-gray-700">
+                                    <tr >
+                                        <th class="py-1 px-2 text-left cursor-pointer" data-column="position" data-order="asc">
+                                            Pos
+                                        </th>
+                                        <th class="py-1 px-2 text-left cursor-pointer" data-column="driver" data-order="asc">
+                                            Driver
+                                        </th>
+                                        <th class="py-1 px-2 text-left cursor-pointer" data-column="constructor" data-order="asc">
+                                            Const
+                                        </th>
+                                        <th class="py-1 px-2 text-left cursor-pointer" data-column="q1" data-order="asc">
+                                            Q1
+                                        </th>
+                                        <th class="py-1 px-2 text-left cursor-pointer" data-column="q2" data-order="asc">
+                                            Q2
+                                        </th>
+                                        <th class="py-1 px-2 text-left cursor-pointer" data-column="q3" data-order="asc">
+                                            Q3
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="qualifying-content">
+                                    <!-- TO BE POPULATED DYNAMICALLY -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT SIDE: Results Table -->
+                    <div id="results-table" class="w-1/2 flex flex-col max-h-[calc(100vh-100px)]">
+                        <h2 class="text-xl italic font-semibold text-center mb-2  rounded-md"><strong>Podium</strong></h2>
+
+                        <!-- PODIUM IMAGES -->
+                        <div id="podium" class="flex justify-center items-center space-x-8 mb-16  rounded-md">
+                            <div class="flex flex-col items-center">
+                                <img src="../img/1st-place.jpg" alt="First Place" class="h-20 w-20 object-contain hover:scale-110 transition-transform rounded-full ">
+                                <p id="first-place" class="text-sm text-center"> <!-- TO BE POPULATED DYNAMICALLY --> </p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <img src="../img/2nd-place.jpg" alt="Second Place" class="h-20 w-20 object-contain hover:scale-110 transition-transform rounded-full">
+                                <p id="second-place" class="text-sm text-center"> <!-- TO BE POPULATED DYNAMICALLY --> </p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <img src="../img/3rd-place.jpg" alt="Third Place" class="h-20 w-20 object-contain hover:scale-110 transition-transform rounded-full">
+                                <p id="third-place" class="text-sm text-center"> <!-- TO BE POPULATED DYNAMICALLY --> </p>
+                            </div>
+                        </div>
+                        <!-- RESULTS TABLE -->
+                        <h2 class="text-xl font-semibold text-center mb-4">Results</h2>
+                        <div id="results-table" class="overflow-x-auto  max-h-[calc(100vh-100px)] pb-4 pt-4">
+                            <table class="min-w-full bg-gray-800 text-white text-sm overflow-x-auto overflow-y-auto">
+                                <thead>
+                                    <tr class="bg-gray-700">
+                                        <th class="py-1 px-2 text-left cursor-pointer  " data-column="position" data-order="asc">
+                                            Pos
+                                        </th>
+                                        <th class="py-1 px-2 text-left cursor-pointer" data-column="driver" data-order="asc">
+                                            Name
+                                        </th>
+                                        <th class="py-1 px-2 text-left cursor-pointer" data-column="constructor" data-order="asc">
+                                            Const
+                                        </th>
+                                        <th class="py-1 px-2 text-left cursor-pointer" data-column="laps" data-order="asc">
+                                            Laps
+                                        </th>
+                                        <th class="py-1 px-2 text-left cursor-pointer" data-column="points" data-order="asc">
+                                            Points
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="results-content">
+                                    <!-- TO BE POPULATED DYNAMICALLY -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- GENERIC POPUP: this will be used for the popup that will appear when the user clicks on 
+    any of the elements that have the data-popup attribute-->
+    <dialog id="popup-template" class="hidden fixed inset-0 flex items-center justify-center z-50">
+        <div class="bg-white text-black p-6 rounded-lg w-[90%] max-w-3xl shadow-lg">
+            <div class="flex justify-between items-center mb-4">
+                <h1 id="popup-title" class="text-xl font-bold italic">
+                    <strong> <!-- TO BE POPULATED DYNAMICALLY --> </strong>
+                </h1>
+                <button id="close-popup" class="text-gray-500 hover:text-black">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                            <!-- TO BE POPULATED DYNAMICALLY -->
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div id="popup-content" class="space-y-4">
+                <!-- TO BE POPULATED DYNAMICALLY -->
+            </div>
+            <div class="flex justify-end mt-4">
+                <button id="close-popup-bottom" class="bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 rounded">Close</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- FOOTER SECTION -->
+    <footer class=" text-white px-6 py-3 flex flex-col items-center">
+      <!-- FOOTER MENU -->
+      <ul class="flex space-x-4">
+          <li><a href="#" class="hover:text-gray-300">About us</a></li>
+          <li>|</li>
+          <li><a href="#" class="hover:text-gray-300">Privacy Policy</a></li>
+          <li>|</li>
+          <li><a href="#" class="hover:text-gray-300">FAQ</a></li>
+      </ul>
+      <!-- FOOTER COPYRIGHT -->
+      <p class="text-sm">© 2024 Pit Stop Central</p>
+  </footer>
+  <!-- SCRIPT FOR THE WEBSITE -->
+  <script src="/src/script.js"></script>
+</body>
+</html>
