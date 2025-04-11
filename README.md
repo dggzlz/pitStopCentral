@@ -61,5 +61,7 @@ For more details, refer to the documentation or contact the developer.
 ## Developed By:
 
 **Diego Gonzalez Reyes**
+
 **Mount Royal University**
+
 COMP3612 Assignment 2
